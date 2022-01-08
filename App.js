@@ -1,10 +1,20 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React, {useState}from 'react';
+import { StyleSheet, Text, View,Button } from 'react-native';
 
 export default function App() {
+
+
+ 
+  const [cnt,setCnt] = useState(10);
+
+ 
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
+      <Text style={styles.assa}>헬로우 리액트 네이티브</Text>
+      <Text style = {styles.cnt}>{cnt}</Text>
+      <Button title="더하기"onPress={ () => setCnt(cnt+1) }></Button>
+      <Button title="빼기"onPress={ () => setCnt(cnt-1) }></Button>
       <StatusBar style="auto" />
     </View>
   );
@@ -16,5 +26,14 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
-  },
+  }, 
+
+assa:{
+  color:'#f00',
+  fontSize:20,
+}, 
+cnt:{
+  fontSize: 50,
+  marginTop:20,
+}
 });
